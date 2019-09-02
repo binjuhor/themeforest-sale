@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Sale extends Model
 {
     protected $fillable = [
-      'author','name', 'sale',
+        'author', 'name', 'sale',
     ];
 
     public function calcSale($saleLastMonth)
@@ -15,9 +15,10 @@ class Sale extends Model
         return number_format($this->sale - $saleLastMonth->sale);
     }
 
-    public function saleToMoney($sale, $currency= '$')
+    public function saleToMoney($sale, $currency = '$')
     {
-            return number_format(35*$sale);
+        $cost = env('SALE_COST') ? env('SALE_COST') : 35;
+        return number_format($cost * $sale);
     }
 
 }

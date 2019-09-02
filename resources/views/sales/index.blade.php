@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <table class="table table-striped table-responsive">
+            <div class="col-md-8 table-responsive">
+                <table class="table table-striped">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
