@@ -19,4 +19,4 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/themeforest/{id}', 'SaleController@index');
-Route::get('/sales/{author}', 'SaleController@show');
+Route::get('/sales/{author}', 'SaleController@show')->middleware('auth');
