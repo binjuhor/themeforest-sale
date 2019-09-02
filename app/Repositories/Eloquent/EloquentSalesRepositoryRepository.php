@@ -20,6 +20,7 @@ class EloquentSalesRepositoryRepository extends AbstractRepository implements Sa
     public function updateOrCreate(array $data)
     {
         $sale = $data['sale'];
+        unset($data['sale']);
         $this->entity->updateOrCreate($data, ['sale' => $sale]);
     }
 }
