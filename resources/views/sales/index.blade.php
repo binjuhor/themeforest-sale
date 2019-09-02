@@ -12,7 +12,7 @@
                         <th scope="col">Total</th>
                         <th scope="col">Sales</th>
                         <th scope="col">Money</th>
-                        <th scope="col">Updated</th>
+                        <th scope="col" class="d-none d-sm-block">Updated</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -20,9 +20,9 @@
                         <tr>
                             <th scope="row">{{$index+1}}</th>
                             <td>{{$sale->name}}</td>
-                            <td>{{$sale->sale}}</td>
+                            <td>{{number_format($sale->sale)}}</td>
                             @if(0 === $index)
-                                <td> {{$sale->sale}} </td>
+                                <td> {{number_format($sale->sale)}} </td>
                             @endif
                             @if($index > 0)
                                 <td>{{$sale->calcSale( $sales[$index-1] ) }}</td>
@@ -33,7 +33,7 @@
                             @if($index > 0)
                                 <td>$ {{$sale->saleToMoney($sale->calcSale( $sales[$index-1] ))}}</td>
                             @endif
-                            <td>{{$sale->updated_at->format('H:s d/m/Y') }}</td>
+                            <td class="d-none d-sm-block">{{$sale->updated_at->format('H:s d/m/Y') }}</td>
 
                         </tr>
                     @endforeach
