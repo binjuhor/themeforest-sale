@@ -24,9 +24,17 @@ class SaleController extends Controller
 
         $this->sales->createOrUpdate([
             'author' => $request->id,
-            'name' => 'T'.date('m/Y'),
+            'name' => 'T' . date('m/Y'),
             'sale' => "{$salesThisMonth}",
         ]);
         echo $salesThisMonth;
+    }
+
+    public function show(Request $request)
+    {
+        $sales = $this
+            ->sales
+            ->findWhere('author', $request->author);
+        return view('sales.index', ['sales' => $sales]);
     }
 }
