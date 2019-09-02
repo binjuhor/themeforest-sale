@@ -4,23 +4,21 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <table class="table table-striped">
+                <table class="table table-striped table-responsive">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">Monthy</th>
-                        <th scope="col">Total Sale</th>
-                        <th scope="col">Sale</th>
+                        <th scope="col">Month</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Sales</th>
                         <th scope="col">Money</th>
-                        <th scope="col">Updated At</th>
+                        <th scope="col">Updated</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($sales as $index => $sale )
                         <tr>
                             <th scope="row">{{$index+1}}</th>
-                            <td>{{$sale->author}}</td>
                             <td>{{$sale->name}}</td>
                             <td>{{$sale->sale}}</td>
                             @if(0 === $index)
