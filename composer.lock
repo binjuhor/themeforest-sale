@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5c3445068f6ee9808f61153abf9d852e",
-    "content-hash": "e2e55ba6ce21ecb9bb637025d37e1967",
+    "hash": "1cc45248ee7879ef8346386c4e2feca1",
+    "content-hash": "76dee623dc68fa9bffd13d60783f7d5d",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -52,6 +52,47 @@
             "description": "BaconQrCode is a QR code generator for PHP.",
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "time": "2017-10-17 09:59:25"
+        },
+        {
+            "name": "binjuhor/https-protocol",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/binjuhor/https-protocol.git",
+                "reference": "94cf3c5a12d84e2864dd1427eaaa08eeda33b955"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/binjuhor/https-protocol/zipball/94cf3c5a12d84e2864dd1427eaaa08eeda33b955",
+                "reference": "94cf3c5a12d84e2864dd1427eaaa08eeda33b955",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Binjuhor\\Http\\Middleware\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "binjuhor"
+                }
+            ],
+            "description": "HTTPS protocol is a middleware for Laravel, force use HTTPS when in production mode",
+            "homepage": "https://github.com/binjuhor/https-protocol",
+            "keywords": [
+                "https",
+                "https protocol",
+                "laravel"
+            ],
+            "time": "2019-09-02 08:57:28"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -5202,7 +5243,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "binjuhor/https-protocol": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

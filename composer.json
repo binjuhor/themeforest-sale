@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.1.3",
         "bacon/bacon-qr-code": "1.0.3",
+        "binjuhor/https-protocol": "dev-master",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
