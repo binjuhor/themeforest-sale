@@ -22,7 +22,7 @@ class SaleController extends Controller
         $textSale = $dom->find('.user-info-header__stats-content strong', 0);
         $salesThisMonth = str_replace(',', '', trim($textSale->text));
 
-        $this->sales->createOrUpdate([
+        $this->sales->updateOrCreate([
             'author' => $request->id,
             'name' => 'T' . date('m/Y'),
             'sale' => "{$salesThisMonth}",

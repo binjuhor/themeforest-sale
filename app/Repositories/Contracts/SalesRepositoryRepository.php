@@ -4,5 +4,5 @@ namespace App\Repositories\Contracts;
 
 interface SalesRepositoryRepository
 {
-    public function createOrUpdate(array $data);
+    public function updateOrCreate(array $data);
 }

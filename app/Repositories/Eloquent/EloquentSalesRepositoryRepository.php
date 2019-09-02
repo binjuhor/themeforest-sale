@@ -14,8 +14,12 @@ class EloquentSalesRepositoryRepository extends AbstractRepository implements Sa
         return Sale::class;
     }
 
-    public function createOrUpdate(array $data)
+    /**
+     * @param array $data
+     */
+    public function updateOrCreate(array $data)
     {
-        $this->entity->updateOrCreate($data);
+        $sale = $data['sale'];
+        $this->entity->updateOrCreate($data, ['sale' => $sale]);
     }
 }
