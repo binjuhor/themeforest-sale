@@ -12,7 +12,8 @@
                         <th scope="col">Monthy</th>
                         <th scope="col">Total Sale</th>
                         <th scope="col">Sale</th>
-                        <th scope="col">Money ($) </th>
+                        <th scope="col">Money</th>
+                        <th scope="col">Updated At</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -34,6 +35,7 @@
                             @if($index > 0)
                                 <td>$ {{$sale->saleToMoney($sale->calcSale( $sales[$index-1] ))}}</td>
                             @endif
+                            <td>{{$sale->updated_at->format('H:s d/m/Y') }}</td>
 
                         </tr>
                     @endforeach
