@@ -63,7 +63,7 @@ class SaleUpdate extends Command
         $textSale = $dom->find('.user-info-header__stats-content strong', 0);
         $salesThisMonth = str_replace(',', '', trim($textSale->text));
 
-        $this->sales->createOrUpdate([
+        $this->sales->updateOrCreate([
             'author' => $themeuser,
             'name' => 'T' . date('m/Y'),
             'sale' => "{$salesThisMonth}",
