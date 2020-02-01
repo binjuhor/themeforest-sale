@@ -25,6 +25,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('sale:update beautheme --force')->hourly();
+        $schedule->command('sale:update nootheme --force')->hourly();
+        $schedule->command('sale:update awethemes --force')->hourly();
     }
 
     /**
