@@ -14,8 +14,8 @@ class Sale extends Model
     {
         $previousMonth = $this
             ->where('id', '<', $this->id)
-            ->where('author',$this->author)
-            ->orderBy('id','desc')->first();
+            ->where('author', $this->author)
+            ->orderBy('id', 'desc')->first();
         return number_format($this->sale - $previousMonth->sale);
     }
 
