@@ -25,7 +25,7 @@
                                 <td> {{number_format($sale->sale)}} </td>
                             @endif
                             @if($index > 0)
-                                <td>{{$sale->calcSale( $sales[$index-1] ) }}</td>
+                                <td>{{$sale->calcSale() }}</td>
                             @endif
                             @if(0 === $index)
                                 <td> $ {{$sale->saleToMoney($sale->sale)}} </td>
