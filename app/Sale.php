@@ -13,7 +13,9 @@ class Sale extends Model
     public function calcSale()
     {
         $previousMonth = $this->where('id', '<', $this->id)->orderBy('id','desc')->first();
-        return number_format((int)$this->sale - (int)$previousMonth->sale);
+        echo $previousMonth->sale.'|';
+        echo $this->sale.'|';
+        return number_format($this->sale - $previousMonth->sale);
     }
 
     public function saleToMoney($sale, $currency = '$')
