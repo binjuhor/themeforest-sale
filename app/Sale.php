@@ -12,7 +12,10 @@ class Sale extends Model
 
     public function calcSale()
     {
-        $previousMonth = $this->where('id', '<', $this->id)->orderBy('id','desc')->first();
+        $previousMonth = $this
+            ->where('id', '<', $this->id)
+            ->where('author',$this->author)
+            ->orderBy('id','desc')->first();
         return number_format($this->sale - $previousMonth->sale);
     }
 
