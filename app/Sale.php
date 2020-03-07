@@ -10,12 +10,9 @@ class Sale extends Model
         'author', 'name', 'sale',
     ];
 
-    public function calcSale()
+    public function calcSale($saleLastMonth)
     {
-        $previousMonth = $this->where('id', '<', $this->id)->orderBy('id','desc')->first();
-        echo $previousMonth->sale.'|';
-        echo $this->sale.'|';
-        return number_format($this->sale - $previousMonth->sale);
+        return number_format($this->sale - $saleLastMonth->sale);
     }
 
     public function saleToMoney($sale, $currency = '$')
