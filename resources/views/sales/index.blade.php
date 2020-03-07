@@ -16,26 +16,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($sales as $index => $sale )
+                    <?php $i=0;?>
+                    @foreach($sales as $sale )
                         <tr>
-                            <th scope="row">{{$index+1}}</th>
+                            <th scope="row">{{$i+1}}</th>
                             <td>{{$sale->name}}</td>
                             <td>{{number_format($sale->sale)}}</td>
-                            @if(0 === $index)
-                                <td> {{number_format($sale->sale)}} </td>
-                            @endif
-                            @if($index > 0)
-                                <td>{{$sale->calcSale() }}</td>
-                            @endif
-                            @if(0 === $index)
-                                <td> $ {{$sale->saleToMoney($sale->sale)}} </td>
-                            @endif
-                            @if($index > 0)
-                                <td>$ {{$sale->saleToMoney($sale->calcSale())}}</td>
-                            @endif
+                            <td>{{number_format($sale->calcSale()) }}</td>
+                            <td> $ {{$sale->saleToMoney($sale->calcSale())}} </td>
                             <td class="d-none d-sm-block">{{$sale->updated_at->format('H:s d/m/Y') }}</td>
-
                         </tr>
+                        <?php $i++;?>
                     @endforeach
 
                     </tbody>

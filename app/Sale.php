@@ -16,7 +16,10 @@ class Sale extends Model
             ->where('id', '<', $this->id)
             ->where('author', $this->author)
             ->orderBy('id', 'desc')->first();
-        return number_format($this->sale - $previousMonth->sale);
+        if ($previousMonth) {
+            return number_format($this->sale - $previousMonth->sale);
+        }
+        return $this->sale;
     }
 
     public function saleToMoney($sale, $currency = '$')
