@@ -35,6 +35,7 @@ class SaleController extends Controller
         $sales = $this
             ->sales
             ->findWhere('author', $request->author);
+        $sales = $sales->sortBy('created_at');
         return view('sales.index', ['sales' => $sales]);
     }
 }
