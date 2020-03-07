@@ -31,7 +31,7 @@
                                 <td> $ {{$sale->saleToMoney($sale->sale)}} </td>
                             @endif
                             @if($index > 0)
-                                <td>$ {{$sale->saleToMoney($sale->calcSale( $sales[$index-1] ))}}</td>
+                                <td>$ {{$sale->saleToMoney($sale->calcSale())}}</td>
                             @endif
                             <td class="d-none d-sm-block">{{$sale->updated_at->format('H:s d/m/Y') }}</td>
 
