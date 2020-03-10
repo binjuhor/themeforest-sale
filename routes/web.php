@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'Hello this is an app for update themeforest sales';
 });
+Route::get('/{author}', 'SaleController@show');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/themeforest/{id}', 'SaleController@index');
-Route::get('/sales/{author}', 'SaleController@show');
