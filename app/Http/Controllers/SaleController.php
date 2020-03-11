@@ -34,7 +34,18 @@ class SaleController extends Controller
     {
         $sales = $this
             ->sales
-            ->findWhere('author', $request->author?$request->author:'beautheme');
+            ->findWhere('author', $request->author ? $request->author : 'beautheme');
         return view('sales.index', ['sales' => $sales->sortBy('created_at')]);
+    }
+
+    public function saleTeam(Request $request)
+    {
+        $sales = $this
+            ->sales
+            ->findWhere('author', $request->author ? $request->author : 'beautheme');
+
+        return response()->json([
+            'sales' => $sales->sortBy('created_at')
+        ]);
     }
 }
