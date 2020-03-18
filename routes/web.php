@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return 'Hello this is an app for update themeforest sales';
+    return 'Hello I\'m an assistant update <a href="/beautheme">our sales</a> from Themeforest.<br> Contact my boss binjuhor@gmail.com';
 });
 Route::get('/{author}', 'SaleController@show');
 
