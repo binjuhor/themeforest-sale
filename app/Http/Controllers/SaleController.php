@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PHPHtmlParser\Dom;
+use App\Http\Resources\SaleResource;
 use App\Repositories\Eloquent\EloquentSalesRepositoryRepository as SaleRepository;
 
 class SaleController extends Controller
@@ -34,18 +35,22 @@ class SaleController extends Controller
     {
         $sales = $this
             ->sales
-            ->findWhere('author', $request->author ? $request->author : 'beautheme');
-        return view('sales.index', ['sales' => $sales->sortBy('created_at')]);
+            ->findWhere('author', $request->author ? $request->author : 'beautheme')
+            ->sortBy('created_at');
+
+        $sales = SaleResource::collection($sales);
+        return view('sales.index', ['sales' => $sales]);
     }
 
     public function saleTeam(Request $request)
     {
         $sales = $this
             ->sales
-            ->findWhere('author', $request->author ? $request->author : 'beautheme');
+            ->findWhere('author', $request->author ? $request->author : 'beautheme')
+            ->sortBy('created_at');
 
         return response()->json([
-            'sales' => $sales->sortBy('created_at')
+            'sales' => SaleResource::collection($sales)
         ]);
     }
 }

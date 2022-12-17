@@ -10,22 +10,24 @@ class Sale extends Model
         'author', 'name', 'sale',
     ];
 
-    public function calcSale()
+    protected $appends = ['sale_in_month', 'earn'];
+
+
+    public function getSaleInMonthAttribute()
     {
         $previousMonth = $this
             ->where('id', '<', $this->id)
             ->where('author', $this->author)
             ->orderBy('id', 'desc')->first();
         if ($previousMonth) {
-            return number_format($this->sale - $previousMonth->sale);
+            return $this->sale - $previousMonth->sale;
         }
         return $this->sale;
     }
 
-    public function saleToMoney($sale, $currency = '$')
+    public function getEarnAttribute()
     {
-        $cost = env('SALE_COST') ? env('SALE_COST') : 35;
-        return number_format($cost * $sale);
+        return number_format(config('sale.cost') * $this->sale_in_month);
     }
 
 }

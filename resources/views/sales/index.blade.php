@@ -11,7 +11,7 @@
                         <th scope="col">Month</th>
                         <th scope="col">Total</th>
                         <th scope="col">Sales</th>
-                        <th scope="col">Money</th>
+                        <th scope="col">Earn</th>
                         <th scope="col" class="d-none d-sm-block">Updated</th>
                     </tr>
                     </thead>
@@ -21,10 +21,10 @@
                         <tr>
                             <th scope="row">{{$i+1}}</th>
                             <td>{{$sale->name}}</td>
-                            <td>{{number_format($sale->sale)}}</td>
-                            <td>{{number_format($sale->calcSale()) }}</td>
-                            <td> $ {{$sale->saleToMoney($sale->calcSale())}} </td>
-                            <td class="d-none d-sm-block">{{$sale->updated_at->format('H:s d/m/Y') }}</td>
+                            <td>{{$sale->sale}}</td>
+                            <td>{{ $sale->sale_in_month }}</td>
+                            <td> ${{$sale->earn}} </td>
+                            <td class="d-none d-sm-block">{{$sale->updated_at }}</td>
                         </tr>
                         <?php $i++;?>
                     @endforeach
