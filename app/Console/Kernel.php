@@ -24,16 +24,16 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('sale:update beautheme --force')->hourly();
-        $schedule->command('sale:update awethemes --force')->hourly();
-        $schedule->command('sale:update nootheme --force')->hourly();
-        $schedule->command('sale:update 7uptheme --force')->hourly();
-        $schedule->command('sale:update halothemes --force')->hourly();
-        $schedule->command('sale:update villatheme --force')->hourly();
-        $schedule->command('sale:update opal_wp --force')->hourly();
-        $schedule->command('sale:update boostifythemes --force')->hourly();
-        $schedule->command('sale:update like-themes --force')->hourly();
-        $schedule->command('sale:update themefusion --force')->everyMinute();
+        $schedule->command('sale:update beautheme')->hourly();
+        $schedule->command('sale:update awethemes')->hourly();
+        $schedule->command('sale:update nootheme')->hourly();
+        $schedule->command('sale:update 7uptheme')->hourly();
+        $schedule->command('sale:update halothemes')->hourly();
+        $schedule->command('sale:update villatheme')->hourly();
+        $schedule->command('sale:update opal_wp')->hourly();
+        $schedule->command('sale:update boostifythemes')->hourly();
+        $schedule->command('sale:update like-themes')->hourly();
+        $schedule->command('sale:update themefusion')->hourly();
     }
 
     /**
