@@ -17,18 +17,17 @@
                     </thead>
                     <tbody>
                     <?php $i=0;?>
-                    @foreach($sales as $sale )
-                        <tr>
-                            <th scope="row">{{$i+1}}</th>
-                            <td>{{$sale->name}}</td>
-                            <td>{{$sale->sale}}</td>
-                            <td>{{ $sale->sale_in_month }}</td>
-                            <td> ${{$sale->earn}} </td>
-                            <td class="d-none d-sm-block">{{$sale->updated_at }}</td>
-                        </tr>
-                        <?php $i++;?>
-                    @endforeach
-
+                        @foreach($sales as $sale )
+                            <tr>
+                                <th scope="row">{{$i+1}}</th>
+                                <td>{{$sale->name}}</td>
+                                <td>{{$sale->sale}}</td>
+                                <td>{{ $sale->sale_in_month }}</td>
+                                <td> ${{$sale->earn}} </td>
+                                <td class="d-none d-sm-block">{{$sale->updated_at }}</td>
+                            </tr>
+                            <?php $i++;?>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
